@@ -2,8 +2,8 @@ apiVersion: build.openshift.io/v1
 kind: BuildConfig
 metadata:
   labels:
-    name: pittar-spring-parent
-  name: pittar-spring-parent
+    name: pittar-demo-dependency
+  name: pittar-demo-dependency
 spec:
   failedBuildsHistoryLimit: 5
   nodeSelector: {}
@@ -14,13 +14,13 @@ spec:
   source:
     git:
       ref: master
-      uri: https://github.com/pittar/pittar-spring-parent.git
+      uri: https://github.com/pittar/spring-demo-dependency.git
     type: Git
   strategy:
     jenkinsPipelineStrategy:
       env:
       - name: GIT_SOURCE_URL
-        value: https://github.com/pittar/pittar-spring-parent.git
+        value: https://github.com/pittar/spring-demo-dependency.git
       - name: GIT_SOURCE_REF
         value: master
       jenkinsfilePath: Jenkinsfile
